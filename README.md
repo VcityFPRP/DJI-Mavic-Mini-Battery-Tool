@@ -1,3 +1,5 @@
+[Polski](README.md) | [English](README_EN.md)
+
 # DJI Mavic Mini 1 — Battery Service & Programmer Tool
 
 Samodzielna aplikacja dla Windows (`.exe`) oraz firmware dla **Arduino Nano (ATmega328P)** do pełnej diagnostyki, naprawy, odblokowywania i edycji pamięci EEPROM (Data Flash) akumulatorów **DJI Mavic Mini 1 (`MB2-2400mAh-7.2V`, kontroler TI `bq9003` / `BQ40z307`)** po magistrali SMBus (`0x0B`).
@@ -70,3 +72,9 @@ pyinstaller --noconfirm --onefile --windowed --name "DJI_MavicMini_Battery_Tool"
   --add-data "src/firmware/dji_battery_inspector.ino.hex;fw" ^
   src/app/dji_battery_tool.py
 ```
+
+---
+
+## Tagi / Słowa kluczowe (Keywords)
+
+`dji` `mavic-mini` `mavic-mini-1` `wm160` `mb2-2400mah` `ba01wm160` `bq9003` `bq40z307` `bq40z50` `arduino-nano` `smbus` `i2c` `bms-reset` `dji-battery-unlock` `clear-pf` `clear-pf2` `error-30074` `battery-cell-error` `cycle-count-reset` `eeprom-dump` `data-flash` `ch340` `recelling` `odblokowanie-baterii-dji` `reset-cykli-dji`
