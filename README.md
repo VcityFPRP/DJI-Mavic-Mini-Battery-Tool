@@ -29,12 +29,15 @@ Samodzielna aplikacja dla Windows (`.exe`) oraz firmware dla **Arduino Nano (ATm
 
 | Pin baterii Mavic Mini 1 | Funkcja | Połączenie z Arduino Nano | Uwagi |
 | :--- | :--- | :--- | :--- |
-| **Pin 1** | `SCL` (SMBC) | **`A5`** | Opcjonalnie pull-up `4,7 kΩ` do `3,3 V` |
+| **Pin 1** | `SCL` (SMBC) | **`A5`** | Działa na samych wewnętrznych pull-upach Arduino (opcjonalnie `4,7 kΩ` do `3,3 V`) |
 | **Pin 2** | `GND` (`PACK-`) | **`GND`** | Wspólna masa z zasilaczem wybudzającym |
 | **Pin 3** | `B+` (`PACK+`) | **NIE PODŁĄCZAĆ!** | Tylko do zasilacza `8,0–8,4 V` ($\le 0,5\text{ A}$) przy wybudzaniu |
 | **Pin 4** | `B+` (`PACK+`) | **NIE PODŁĄCZAĆ!** | Zdublowany z Pinem 3 |
 | **Pin 5** | `GND` (`PACK-`) | **`GND`** | Zdublowany z Pinem 2 |
-| **Pin 6** | `SDA` (SMBD) | **`A4`** | Opcjonalnie pull-up `4,7 kΩ` do `3,3 V` |
+| **Pin 6** | `SDA` (SMBD) | **`A4`** | Działa na samych wewnętrznych pull-upach Arduino (opcjonalnie `4,7 kΩ` do `3,3 V`) |
+
+> [!NOTE]
+> **Bez zewnętrznych rezystorów:** Dzięki obniżeniu zegara I²C w firmware do `50 kHz` i włączeniu `INPUT_PULLUP` na pinach `A4`/`A5`, komunikacja działa bezpośrednio na **samych wewnętrznych pull-upach Arduino Nano** (wystarczą 3 przewody: `A5`, `A4`, `GND`). Zewnętrzne rezystory `4,7 kΩ` do `3,3 V` są potrzebne wyłącznie opcjonalnie przy dłuższych przewodach lub problemach z zakłóceniami.
 
 > [!CAUTION]
 > **Nigdy nie podłączaj pinów `B+` (Pin 3 / Pin 4) do Arduino!** Do wybudzania uśpionego BMS po wymianie ogniw użyj osobnego zasilacza laboratoryjnego ustawionego na **8,0–8,4 V** z ograniczeniem prądu **$\le 0,5\text{ A}$** podłączonego równolegle do `B+` i `GND` ze wspólną masą z Arduino.
